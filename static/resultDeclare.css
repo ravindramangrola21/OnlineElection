@@ -1,0 +1,74 @@
+.table {
+    padding: 20px;
+}
+.statistics {
+    margin: auto;
+    width: 70%;
+    margin-top: 30px;
+    border: 1px solid;
+    border-radius: 10px;
+    border-spacing: 0;
+}
+.statistics caption {
+    font-size: 1.5rem;
+    line-height: 3rem;
+    font-weight: bold;
+}
+.statistics thead {
+    background-color: #8484ea;
+    text-align: left;
+}
+.statistics thead tr {
+    height: 40px;
+}
+.statistics thead tr th:first-child {
+    border-top-left-radius: 10px;
+}
+.statistics thead tr th:last-child {
+    border-top-right-radius: 10px;
+}
+.statistics thead th {
+    padding: 1%;
+}
+
+.statistics tbody {
+    text-align: left;
+}
+.statistics tbody tr {
+    height: 40px;
+}
+.statistics tbody tr:last-child td:first-child {
+    border-bottom-left-radius: 10px;
+}
+.statistics tbody tr:last-child td:last-child {
+    border-bottom-right-radius: 10px;
+}
+.statistics tbody td {
+    padding: 1%;
+}
+.statistics tbody tr:nth-child(2n) {
+    background-color: #8484ea1c;
+}
+
+@media only screen and (max-width: 991px) {
+    .statistics {
+        width: 80%;
+    }
+}
+@media only screen and (max-width: 850px) {
+    .statistics {
+        width: 90%;
+    }
+}
+@media only screen and (max-width: 765px) {
+    .table {
+        padding: 20px 0;
+    }
+    .statistics {
+        width: 100%;
+        min-width: 700px;
+    }
+    header {
+        min-width: 700px;
+    }
+}

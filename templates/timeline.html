@@ -1,0 +1,107 @@
+{% extends 'layout.html' %}
+
+{% block title %}home{% endblock %}
+
+{% block link %}
+<link type="text/css" rel="stylesheet" href="static/timeline.css" /> 
+{% endblock %}
+
+{% block body %}
+<div class="outer_box">
+
+    <h2>{{data[0][1]}}</h2>
+
+    <div class="box">
+
+        <div class="vertical_line"></div>
+        <div class="movedots">
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+
+        </div>
+        <div class="movebigdots">
+            <div class="bigdot"></div>
+            <div class="bigdot"></div>
+        </div>
+
+
+        <div class="content">
+
+            <div class="putTogether">
+                <div class="holder">
+                    <h4>
+                        Registration Start @
+                    </h4>
+                    <p>
+                        {{data[0][2]}}
+                    </p>
+                </div>
+
+            </div>
+            <div class="putTogether">
+                <div class="holder">
+                    <h4>
+                        Registration End @
+                    </h4>
+                    <p>
+                        {{data[0][3]}}
+                    </p>
+                </div>
+
+            </div>
+            <div class="putTogether">
+                <div class="holder">
+                    <h4>
+                        Voting Start @
+                    </h4>
+                    <p>
+                        {{data[0][4] }}{{data[0][5]}}
+                    </p>
+                </div>
+
+            </div>
+            <div class="putTogether">
+                <div class="holder">
+                    <h4>
+                        Voting End @
+                    </h4>
+                    <p>
+                        {{data[0][4] }}{{data[0][6]}}
+                    </p>
+                </div>
+
+            </div>
+            <div class="putTogether">
+                <div class="holder">
+                    <h4>
+                        Result Declaration @
+                    </h4>
+                    <p>
+                        {{data[0][7]}}
+                    </p>
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+</div>
+
+
+{% endblock body %}
+{% block script %}
+
+
+  <script type="text/javascript">
+		$(document).ready(function () {
+        $("#home").addClass("active");
+		})
+	</script>
+  
+  {% endblock %}

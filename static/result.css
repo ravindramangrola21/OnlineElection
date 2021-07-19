@@ -1,0 +1,125 @@
+.congrats{
+    background-image: url(pics/congrtsBackGrnd.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 387px;
+    min-width: 400px;
+    
+}
+
+.textStyle{
+    color: white;
+    font-family: 'Tangerine', cursive;
+    text-align: center;
+}
+
+.congrats h2{
+    font-size: 5.17em;
+    padding-top: 103px;
+}
+
+.congrats p{
+    font-size: 2.5em;
+}
+
+
+.statistics{
+    margin: auto;
+    width: 60%;
+    margin-top: 30px;
+    border: 1px solid;
+    border-radius: 10px;
+    border-spacing: 0;
+
+}
+.statistics caption{
+    font-size: 1.5rem;
+    line-height: 3rem;
+    font-weight: bold;
+}
+.statistics thead{
+    background-color: #8484ea;
+    text-align: left;
+}
+.statistics thead tr{
+    height: 40px;
+}
+.statistics thead tr th:first-child{
+    border-top-left-radius: 10px;
+}
+.statistics thead tr th:last-child{
+    border-top-right-radius: 10px;
+}
+.statistics thead th{
+    padding: 1%;
+}
+
+.statistics tbody{
+    text-align: left;
+}
+.statistics tbody tr{
+    height: 40px;
+}
+.statistics tbody tr:last-child td:first-child{
+    border-bottom-left-radius: 10px;
+}
+.statistics tbody tr:last-child td:last-child{
+    border-bottom-right-radius: 10px;
+}
+.statistics tbody td{
+    padding: 1%;
+}
+.statistics tbody tr:nth-child(2n)
+{
+    background-color: #8484ea1c;
+}
+
+
+@media only screen and (max-width: 991px) {
+    
+    .congrats p {
+        font-size: 2.2em;
+    }
+
+    .congrats h2 {
+        font-size: 4.17em;
+    }
+}
+@media only screen and (max-width: 331px) {
+    
+    .congrats p {
+        font-size: 2.1em;
+    }
+
+    .congrats h2 {
+        font-size: 3.17em;
+        padding-top: 50px;
+    }
+    .congrats {
+        height: 300px;
+    }
+}
+@media only screen and (max-width: 800px) {
+    
+    .statistics{
+        width: 80%;
+    }
+}
+@media only screen and (max-width: 600px) {
+    
+    .statistics{
+        width: 90%;
+    }
+}
+@media only screen and (max-width: 500px) {
+    
+    .statistics{
+        width: 100%;
+        min-width: 400px;
+    }
+    header {
+       
+        min-width: 400px;
+      }
+}

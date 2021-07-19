@@ -1,0 +1,77 @@
+.textStyle{
+    color: black;
+    font-family: 'Jost', sans-serif;
+    text-align: center;
+}
+h1{
+    font-size: 5.17em;
+    padding-top: 103px;
+}
+
+h2{
+    font-size: 4.17em;
+}
+
+p{
+    font-size: 2.5em;
+}
+
+@media only screen and (max-width: 991px) {
+    
+    p {
+        font-size: 2.2em;
+    }
+
+    h1 {
+        font-size: 4.17em;
+    }
+    h2 {
+        font-size: 3.17em;
+    }
+}
+@media only screen and (max-width: 800px) {
+    
+     p {
+        font-size: 2.1em;
+    }
+    h1 {
+        font-size: 3.17em;
+        padding-top: 50px;
+    }
+
+    h2 {
+        font-size: 2.5em;
+    }
+    
+}
+@media only screen and (max-width: 610px) {
+    
+    p {
+       font-size: 1.8em;
+   }
+   h1 {
+       font-size: 3em;
+       padding-top: 50px;
+   }
+
+   h2 {
+       font-size: 2em;
+   }
+   
+}
+@media only screen and (max-width: 500px) {
+    
+    p {
+       font-size: 1em;
+   }
+   h1 {
+       font-size: 2em;
+       padding-top: 50px;
+   }
+
+   h2 {
+       font-size: 1.5em;
+   }
+   
+}
+

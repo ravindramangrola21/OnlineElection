@@ -1,0 +1,142 @@
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: sans-serif;
+}
+html{
+  min-width: fit-content;
+}
+
+
+header {
+  width: 100vw;
+  position: fixed;
+  z-index: 2;
+  height: 70px;
+  background-color: #262626;
+  padding: 0 20px;
+  min-width: 220px;
+}
+
+header #logo {
+  height: inherit;
+  width: 70px;
+  float: left;
+  margin-right: 14%;
+}
+
+header img {
+  height: inherit;
+  width: 70px;
+}
+
+header .navbar {
+  float: left;
+}
+
+header ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+header li {
+  list-style: none;
+  display: inline-block;
+}
+
+
+header li a {
+  height: 70px;
+  line-height: 70px;
+  color: #fff;
+  text-decoration: none;
+  padding: 0 20px;
+  display: block;
+}
+header li a.dropDown{
+  background-color: #262626;
+  text-align: center;
+  display: none;
+}
+header li.register:hover .dropDown{
+  display: block;
+}
+header li.login:hover .dropDown{
+  display: block;
+}
+header li a .fa-caret-down:before {
+  margin-left: 6px;
+}
+
+header li a:hover, header li a.active {
+  background-color: #555555;
+}
+
+header .menu-toggle {
+  color: #fff;
+  float: right;
+  line-height: 70px;
+  font-size: 24px;
+  cursor: pointer;
+  display: none;
+}
+main {
+  position: relative;
+  top: 90px;
+}
+
+@media only screen and (max-width: 991px) {
+  header .menu-toggle {
+    display: block;
+  }
+  header .navbar {
+    display: none;
+    position: absolute;
+    top: 70px;
+    width: 100%;
+    margin: 0 -20px;
+    background-color: #262626;
+  }
+  header .navbar ul {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  header .navbar ul li {
+    display: block;
+    width: 100%;
+  }
+  header .navbar ul li a {
+    font-size: 1.25rem;
+    text-align: center;
+  }
+  header .navbar ul .register a:first-child{
+    display: none;
+
+  }
+  header .navbar ul .login a:first-child{
+    display: none;
+
+  }
+  header li a.dropDown{
+    display: block;
+  }
+  header ul .register .dropDown::after{
+    content: " Register";
+    
+  }
+  header ul .login .dropDown::after{
+    content: " Login";
+    
+  }
+  header .menu {
+    display: block;
+  }
+}

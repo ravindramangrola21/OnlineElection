@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Admin Login</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link type="text/css" rel="stylesheet" href="static/adminLoginStyle.css"/>
+    </head>
+    <body>
+        <div style="text-align: center; width: 50%;margin: auto;margin-top: 50px;">
+        {% with messages = get_flashed_messages() %}  
+            {% if messages %}  
+               {% for message in messages %}  
+                    <h3> {{ message }}</h3>  
+               {% endfor %}  
+            {% endif %}  
+        {% endwith %}
+        </div>
+      <div id="first">  
+        <header>
+            Admin Login
+        </header>
+        <form action="/dashboard" method="POST">   
+            <div id="second_div">
+               <input type="text" name="username" placeholder="Enter Admin Username" autocomplete="off">
+                <br>
+                <input type="password" name="password" placeholder="Enter Password" autocomplete="off">
+                <br>
+            </div>
+                <button><a href="/">Home</a></button>
+                <button type="submit">Login</button>
+        </form>
+      </div>
+    </body>
+</html>

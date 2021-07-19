@@ -1,0 +1,77 @@
+header{
+    min-width: 1255px;
+}
+
+.statistics {
+    margin: auto;
+    border: 1px solid;
+    border-radius: 10px;
+    border-spacing: 0;
+    width: 98%;
+    min-width: 1255px;
+    font-size: small;
+}
+.statistics caption {
+    font-size: 1.5rem;
+    line-height: 3rem;
+    font-weight: bold;
+    padding-top: 30px;
+}
+.statistics thead {
+    background-color: #8484ea;
+    text-align: left;
+}
+
+.statistics thead tr th:nth-child(9) {
+    width: 15%;
+}
+
+.statistics thead th {
+    padding: 9px 5px;
+}
+.statistics thead tr th:first-child {
+    border-top-left-radius: 10px;
+}
+.statistics thead tr th:last-child {
+    border-top-right-radius: 10px;
+}
+
+.statistics tbody {
+    text-align: left;
+}
+
+.statistics tbody td {
+    padding: 9px 5px;
+}
+.statistics tbody td .electionSymbol{
+    width: 75px;
+    height: 75px;
+}
+.statistics tbody tr:last-child td:first-child {
+    border-bottom-left-radius: 10px;
+}
+.statistics tbody tr:last-child td:last-child {
+    border-bottom-right-radius: 10px;
+}
+
+.statistics tbody tr:nth-child(2n) {
+    background-color: #8484ea1c;
+}
+
+button{
+    background-color: inherit;
+    width: 50px;
+    height: 50px;
+    border: none;
+}
+button .btn{
+    width: 50px;
+    height: 50px;
+
+}
+button .btn:hover{
+    width: 52px;
+    height: 52px;
+
+}
+

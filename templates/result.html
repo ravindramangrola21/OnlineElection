@@ -1,0 +1,62 @@
+{% extends 'layout.html' %}
+
+{% block title %}home{% endblock %}
+
+{% block link %}
+<link type="text/css" rel="stylesheet" href="static/result.css" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jost&display=swap" rel="stylesheet">
+{% endblock %}
+
+
+{% block body %}
+
+
+{% if bool %}
+
+<div class="congrats">
+    <h2 class="textStyle">Congratulation {{data2[0][1]}} {{data2[0][2]}}</h2>
+    <p class="textStyle">you won {{data2[0][4]}} votes</p>
+</div>
+
+<table class="statistics">
+    <caption>Voting Statistics</caption>
+    <thead>
+        <tr>
+            <th>Candidate ID</th>
+            <th>Candidate Name</th>
+            <th>Vote Count</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for row in data1  %}
+           <tr>
+              <td>{{row[0]}}</td>
+              <td>{{row[1]}} {{row[2]}}</td>
+              <td>{{row[4]}}</td>
+            </tr>  
+          {% endfor %}
+
+    </tbody>
+
+</table>
+
+{% else %}
+       <h1 style="text-align: center; padding-top: 115px;">Result will be declare very soon</h1>
+  {% endif %}
+
+
+{% endblock  %}
+
+
+{% block script %}
+
+
+  <script type="text/javascript">
+		$(document).ready(function () {
+        $("#home").addClass("active");
+		})
+	</script>
+  
+  {% endblock %}

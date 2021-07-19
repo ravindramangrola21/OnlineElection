@@ -1,0 +1,115 @@
+{% extends 'adminLayout.html' %}
+
+{% block title %}Admin Panel{% endblock %}
+
+{% block link %}
+<link type="text/css" rel="stylesheet" href="static/timeline.css"/>
+{% endblock %}
+
+{% block body %}
+
+ 
+{% if data==() %}
+<link type="text/css" rel="stylesheet" href="static/noelection.css" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Tangerine:wght@700&display=swap" rel="stylesheet"> 
+    <h1 class="textStyle">Ooops......</h1>
+    <h2 class="textStyle">No Running Election available</h2>
+    <p class="textStyle">Please come back later...</p>
+
+{% else %}
+
+<div class="outer_box">
+  <h2>Current running Election</h2>
+  <h2>"{{data[0][1]}}"</h2>
+
+  <div class="box">
+
+      <div class="vertical_line"></div>
+
+      <div class="movedots">
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+
+    </div>
+    <div class="movebigdots">
+        <div class="bigdot"></div>
+        <div class="bigdot"></div>
+    </div>
+      
+
+    <div class="content">
+        <div class="putTogether">
+            <div class="holder">
+                <h4>
+                    Registration Start @
+                </h4>
+                <p>
+                  {{data[0][2]}}
+                </p>
+            </div>
+        </div>
+        <div class="putTogether">
+            <div class="holder" >
+                <h4>
+                    Registration End @
+                </h4>
+                <p>
+                  {{data[0][3]}}
+                </p>
+            </div>
+        </div>
+        <div class="putTogether">
+            <div class="holder">
+                <h4>
+                    Voting Start @
+                </h4>
+                <p>
+                  {{data[0][4]}} {{data[0][5]}}
+                </p>
+            </div>
+        </div>
+        <div class="putTogether">
+            <div class="holder" >
+                <h4>
+                    Voting End @
+                </h4>
+                <p>
+                    {{data[0][4]}} {{data[0][6]}}
+                </p>
+            </div>
+        </div>
+        <div class="putTogether">
+            <div class="holder" >
+                <h4>
+                    Result Declare @
+                </h4>
+                <p>
+                  {{data[0][7]}}
+                </p>
+            </div>
+        </div>
+
+    </div>
+      
+
+  </div>
+</div>
+
+{% endif %}
+{% endblock %}
+
+{% block script %}
+
+
+  <script type="text/javascript">
+		$(document).ready(function () {
+        $("#adminPanel").addClass("active");
+		})
+	</script>
+  
+  {% endblock %}

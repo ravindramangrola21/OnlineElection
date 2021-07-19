@@ -1,0 +1,75 @@
+{% extends 'adminLayout.html' %}
+
+{% block title %}Verify Voters{% endblock %}
+
+{% block link %}
+<link type="text/css" rel="stylesheet" href="static/verifyCandidate.css" />
+{% endblock %}
+
+
+{% block body %}
+
+{% if data == () %}
+<div style="text-align: center; width: 50%;margin: auto;padding-top: 50px;">
+  <h1>No Running Election available or No Voter Registered yet</h1>
+</div>
+{% else %}
+
+<table class="statistics">
+
+  <caption>Registered Voters</caption>
+
+  <thead>
+
+    <tr>
+      <th>ID</th>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>D.O.B</th>
+      <th>Mobile Number</th>
+      <th>Gender</th>
+      <th>Email</th>
+      <th>Status</th>
+      <th colspan="2">Action</th>
+    </tr>
+
+  </thead>
+
+  <tbody>
+    {% for row in data %}
+    <tr>
+      <td>{{row[0]}}</td>
+      <td>{{row[1]}}</td>
+      <td>{{row[2]}}</td>
+      <td>{{row[3]}}</td>
+      <td>{{row[4]}}</td>
+      <td>{{row[5]}}</td>
+      <td>{{row[6]}}</td>
+      <td>{{row[9]}}</td>
+      <td><a href="/approve/{{row[0]}}"><button><img class="btn" src="static/pics/approve.png"
+              alt="Approve"></button></a></td>
+      <td><a href="/reject/{{row[0]}}"><button><img class="btn" src="../static/pics/reject.png"
+              alt="Reject"></button></a></td>
+    </tr>
+    {% endfor %}
+
+  </tbody>
+
+
+
+</table>
+
+
+{% endif %}
+{% endblock %}
+
+{% block script %}
+
+
+<script type="text/javascript">
+  $(document).ready(function () {
+    $("#verifyVoters").addClass("active");
+  })
+</script>
+
+{% endblock %}

@@ -1,0 +1,98 @@
+{% extends 'adminLayout.html' %}
+
+{% block title %}Add Election{% endblock %}
+
+{% block link %}
+<link type="text/css" rel="stylesheet" href="static/formStyle.css"/>
+{% endblock %}
+
+
+{% block body %}
+
+{% if bool %}
+    
+  <div style="text-align: center; width: 50%;margin: auto;"> 
+    {% with messages = get_flashed_messages() %}  
+        {% if messages %}  
+           {% for message in messages %}  
+              <h1>{{message}}</h1>
+           {% endfor %}  
+        {% endif %}  
+    {% endwith %}
+    </div>
+  <div class="form_wrapper">
+    <div class="form_container">
+      <div class="title_container">
+        <h2>Release New Election</h2>
+      </div>
+      <div class="row clearfix">
+
+
+        <div class="">
+          <form action="/release" method='POST'>
+            <div class="input_field"> <div><label for="ename">Name of Election: </label></div>
+              <input type="text" name="ename" id="ename" required />
+            </div>
+            
+            <div class="row clearfix">
+              <div><label>Candidate Registration</label></div>
+              <div class="col_half">
+                <div class="input_field"> <div><label for="sdate">Start at:</label></div>
+                  <input type="date" name="sdate" id="sdate" required />
+                </div>
+              </div>
+              <div class="col_half">
+                <div class="input_field"> <div><label for="edate">End at:</label></div>
+                  <input type="date" name="edate" id="edate" required />
+                </div>
+              </div>
+            </div>
+
+            <div class="input_field"> <div><label for="vcasting">Date of Vote Casting:</label></div>
+              <input type="date" name="vcasting" id="vcasting" required />
+            </div>
+
+            <div class="row clearfix">
+              <div><label> Time of Vote Casting</label></div>
+              <div class="col_half">
+                <div class="input_field"> <div><label for="estart">Starts At :</label></div>
+                  <input type="time" name="vstart" id="estart" required />
+                </div>
+              </div>
+              <div class="col_half">
+                <div class="input_field"> <div><label for="eend">Ends At :</label></div>
+                  <input type="time" name="vend" id="eend" required />
+                </div>
+              </div>
+            </div>
+            <div class="input_field"> <div><label for="rdate">Election Result Release Date:</label></div>
+              <input type="date" name="rdate" id="rdate" required />
+            </div>
+            <input class="button" type="submit" value="Add Election" />
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% else %}
+  <div class="form_wrapper">
+    <p> <b>WARNING :</b> One election already running a new election cannot be added or runnning election cannot be edited rather you can close running election</p>
+    <br>
+    <p><b>NOTE :</b> Closing running election deletes all the data associated with running election including Candidates and Voters registration</p>
+    <div style="text-align:center ;"><a href="/close"><button style="font-size: 20px;">Close Election</button></a></div>  
+  </div>
+  {% endif %}
+  {% endblock %}
+
+  {% block script %}
+
+
+  <script type="text/javascript">
+		$(document).ready(function () {
+        
+        $("#releaseNewElection").addClass("active");
+		})
+	</script>
+  
+  {% endblock %}
+

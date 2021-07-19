@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link type="text/css" rel="stylesheet" href="static/headerStyle.css">
+	<link type="text/css" rel="stylesheet" href="static/redHeaderStyle.css">
+	{% block link %} {% endblock %}
+
+	<title>{% block title %} {% endblock %}</title>
+
+</head>
+
+<body>
+
+	<header>
+		<div id="logo">
+			<img src="static/pics/logo.png" alt="Logo">
+		</div>
+		<nav class="navbar">
+			<ul>
+				<li><a href="/dashboard" id="adminPanel">Home</a></li>
+				<li> <a href="/release" id="releaseNewElection" > Release New Election </a> </li>
+				<li><a href="/Candidates" id="verifycandidate">Verify Candidates</a></li>
+				<li> <a href="/Voters" id="verifyVoters"> Verify Voters</a> </li>
+				<li><a href="/result" id="viewvotes">view votes</a></li>
+				<li><a href="/logout" id="logout">Logout</a></li>
+			</ul>
+
+
+		</nav>
+		<div class="menu-toggle"><i class="fa fa-bars" aria-hidden="true"></i></div>
+	</header>
+	<main>
+		{% block body %} {% endblock %}
+	</main>
+
+
+	<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function () {
+			clickCount = 0;
+
+			$('.menu-toggle').click(function () {
+
+				clickCount++;
+				clickCount = clickCount % 2;
+
+				$('nav').toggleClass('menu');
+
+				if (clickCount == 1) {
+					$('.fa-bars').css("transform", "rotate(90deg)");
+				}
+				else {
+					$('.fa-bars').css("transform", "rotate(0deg)");
+				}
+			})
+		})
+	</script>
+	{% block script %} {% endblock %}
+
+</body>
+
+</html>
+

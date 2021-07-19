@@ -1,0 +1,58 @@
+{% extends 'layout.html' %}
+
+{% block title %}Voter Login{% endblock %}
+
+{% block link %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="static/login.css">
+{% endblock %}
+
+{% block body %}
+
+
+<div class="flash">
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    {% for message in messages %}
+    <p class="para">Error : {{ message }}</p>
+    {% endfor %}
+    {% endif %}
+    {% endwith %}
+</div>
+<div class="form_wrapper">
+    <div class="form_container">
+        <div class="title_container">
+            <h2>Voter Login</h2>
+        </div>
+        <div class="row clearfix">
+            <div class="">
+                <form action="/vlogin" method="POST">
+
+                    <div class="input_field"> <span><i aria-hidden="true" class="fa fa-envelope"></i></span>
+                        <input type="email" name="email" placeholder="Email" required />
+                    </div>
+                    <div class="input_field"> <span><i aria-hidden="true" class="fa fa-lock"></i></span>
+                        <input type="password" name="password" placeholder="Password" required />
+                    </div>
+
+                    <input class="button" type="submit" value="Login" />
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock  %}
+{% block script %}
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+
+        $("#login").addClass("active");
+        $("#vlogin").addClass("active");
+
+
+    })
+    
+</script>
+{% endblock %}

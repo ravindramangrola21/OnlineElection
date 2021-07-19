@@ -1,0 +1,96 @@
+{% extends 'layout.html' %}
+
+{% block title %}Voter Registration{% endblock %}
+
+{% block link %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="static/vstyle.css">
+{% endblock %}
+
+{% block body  %}
+    <div style="text-align: center; width: 50%;margin: auto;"> 
+        {% with messages = get_flashed_messages() %}  
+            {% if messages %}  
+               {% for message in messages %}  
+                  <h1>{{message}}</h1>
+               {% endfor %}  
+            {% endif %}  
+        {% endwith %}
+        </div>
+    {% if data==() %}
+        <div style="text-align: center; width: 50%;margin: auto;"><h1>No Running Election for Voter registration</h1></div>
+    {% else %}
+    <div class="form_wrapper">
+        <div class="form_container">
+            <div class="title_container">
+                <h2>Voter Registration</h2>
+            </div>
+            <div class="row clearfix">
+                <div class="">
+                    <form method='POST' action="/vregister">
+                        <div class="row clearfix">
+                            <div class="col_half">
+                                <div class="input_field"> <span><i aria-hidden= "true" class="fa fa-user"></i></span>
+                                    <input type="text" name="Fname" placeholder="First Name" />
+                                </div>
+                            </div>
+                            <div class="col_half">
+                                <div class="input_field"> <span><i aria-hidden="true" class="fa fa-user"></i></span>
+                                    <input type="text" name="Lname" placeholder="Last Name" required />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="input_field"> <span><i class="fa fa-birthday-cake" aria-hidden="true"></i></span>
+                            <input type="date" name="dob" placeholder="Date of Birth" required />
+                        </div>
+                        <p id="cel_validator"></p>
+                    <div class="input_field"> <span><i class="fa fa-mobile" aria-hidden="true"></i></span>
+                        <input type="tel" name="phone" id="mobNum" onchange="checkMobileNum()" placeholder="Mobile" required />
+                    </div>
+                        
+                        <div class="input_field radio_option">
+                            <input type="radio" name="gender" id="rd1" value="Male">
+                            <label for="rd1">Male</label>
+                            <input type="radio" name="gender" id="rd2" value="Female">
+                            <label for="rd2">Female</label>
+                            <input type="radio" name="gender" id="rd3" value="Other">
+                            <label for="rd3">Other</label>
+                        </div>
+                        
+                        <div class="input_field"> <span><i aria-hidden="true" class="fa fa-envelope"></i></span>
+                            <input type="email" name="email" placeholder="Email" required />
+                        </div>
+                        <div class="input_field"> <span><i aria-hidden="true" class="fa fa-lock"></i></span>
+                            <input type="password" id="pass" onchange="matchPass()" name="password" placeholder="Password" required />
+                        </div>
+                        <p id="msg"></p>
+                        <div class="input_field"> <span><i aria-hidden="true" class="fa fa-lock"></i></span>
+                            <input type="password" id="conf_pass" onchange="matchPass()" name="conf_password" placeholder="Re-type Password" required />
+                        </div>
+                        
+                        <input class="button" type="submit" value="Register" />
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+        
+    {% endif %}
+{% endblock  %}   
+
+
+{% block script %}
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+
+        $("#register").addClass("active");
+        $("#vregister").addClass("active");
+
+
+    })
+    
+</script>
+<script src="static/validator.js"></script>
+{% endblock %}

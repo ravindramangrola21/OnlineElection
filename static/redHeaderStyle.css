@@ -1,0 +1,11 @@
+
+header {
+    background-color: red;
+}
+header li a:hover, header li a.active {
+    background-color: #fb6a6a;
+}
+header #logo {
+    
+    margin-right: 10%;
+}

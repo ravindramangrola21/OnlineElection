@@ -1,0 +1,70 @@
+{% extends 'layout.html' %}
+
+{% block title %}Candidate Profile{% endblock %}
+
+{% block link %}
+<link rel="stylesheet" href="static/cprofile.css">
+{% endblock %}
+
+
+
+{% block body %}
+
+
+<div class="container">
+    <div class="electionSymbol">
+        <img src="static/pics/Hermes.png" alt="Image">
+    </div>
+    <div class="welcome">
+        <h2>Welcome, Dear {{data[0][1]}} {{data[0][2]}}</h2>
+    </div>
+    <hr>
+    <div class="candidate">
+        <h2>Candidate</h2>
+        <h4>Application Status: {{data[0][10]}}</h4>
+    </div>
+    <hr>
+    <div class="details">
+        <h2>Personal Details</h2>
+        <div class="row">
+            <p>ID Number:</p>
+            <p>{{data[0][0]}}</p>
+        </div>
+        <div class="row">
+            <p>Date of Birth:</p>
+            <p>{{data[0][3]}}</p>
+        </div>
+        <div class="row">
+            <p>Mobile:</p>
+            <p>{{data[0][4]}}</p>
+        </div>
+        <div class="row">
+            <p>Email:</p>
+            <p>{{data[0][6]}}</p>
+        </div>
+        <div class="row">
+            <p>Gender:</p>
+            <p>{{data[0][5]}}</p>
+        </div>
+        <div class="row">
+            <p>About:</p>
+            <p>{{data[0][9]}}</p>
+        </div>
+    </div>
+    <div class="options">
+        <button>Log Out</button>
+        <button>Edit</button>
+    </div>
+</div>
+{% endblock %}
+
+{% block script %}
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+         $("#account").addClass("active");
+    })
+
+</script>
+{% endblock %}

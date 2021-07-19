@@ -1,0 +1,136 @@
+html, header{
+  min-width: 350px;
+}
+.outer_box {
+  text-align: center;
+  background-color: aliceblue;
+  width: 80%;
+  margin: auto;
+  border-radius: 15px;
+  padding: 15px;
+  height: 675px;
+  
+}
+
+.outer_box .box {
+  height: 600px;
+  margin: 20px 0;
+  position: relative;
+}
+
+.outer_box .box .vertical_line {
+  border: 3px solid tomato;
+  background-color: tomato;
+  width: 0;
+  height: 504px;
+  margin: 20px 7px;
+  position: absolute;
+  left: 49%;
+}
+.outer_box .box .bigdot {
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  border: 1px solid tomato;
+
+  margin-bottom: 484px;
+
+  background-color: tomato;
+}
+.outer_box .box .movebigdots {
+  position: absolute;
+  top: 10px;
+  left: 49%;
+}
+.outer_box .box .dot {
+  height: 14px;
+  width: 14px;
+  border-radius: 50%;
+  border: 1px solid tomato;
+  margin: auto;
+  margin-bottom: 70px;
+  background-color: white;
+}
+.outer_box .box .movedots {
+  position: absolute;
+  margin: 0 3px;
+  top: 97px;
+  left: 49%;
+}
+
+.content {
+  position: absolute;
+  top: 69px;
+  width: 100%;
+}
+.content .holder {
+  background-color: white;
+  height: 69px;
+  width: 45%;
+  padding-top: 15px;
+
+  border-radius: 12px;
+  border: 2px solid tomato;
+}
+
+.content .putTogether {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  position: relative;
+}
+
+
+@media only screen and (min-width: 601px) {
+  .content .putTogether:nth-child(2n + 1) {
+    justify-content: flex-start;
+    
+  }
+  .content .putTogether:nth-child(2n) {
+    justify-content: flex-end;
+ 
+  }
+  .content .putTogether:nth-child(2n + 1)::after {
+    content: " ";
+    width: 20px;
+    height: 20px;
+    clip-path: polygon(0 0, 0 100%, 50% 50%);
+    background-color: tomato;
+  }
+  .content .putTogether:nth-child(2n)::before {
+    content: " ";
+    width: 20px;
+    height: 20px;
+    clip-path: polygon(100% 0, 100% 100%, 50% 50%);
+    background-color: tomato;
+  }
+}
+
+@media only screen and (max-width: 991px) {
+  .outer_box {
+    width: 100%;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .outer_box .box .vertical_line,
+  .outer_box .box .movedots,
+  .outer_box .box .movebigdots {
+    left: 10%;
+  }
+  .content .putTogether::before {
+    content: " ";
+    width: 20px;
+    height: 20px;
+    clip-path: polygon(100% 0, 100% 100%, 50% 50%);
+    background-color: tomato;
+  }
+  .content .putTogether {
+    justify-content: flex-end;
+    
+  }
+  .content .holder {
+    width: 80%;
+  }
+
+}
+

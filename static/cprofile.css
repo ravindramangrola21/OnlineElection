@@ -1,0 +1,97 @@
+header{
+    min-width: 300px;
+
+
+}
+.container{
+    padding: 12px 0;
+    width: 50%;
+    border: 1px solid rgb(128, 133, 59);
+    background-color:rgb(211, 226, 194) ;
+    margin: auto;
+    border-radius: 12px;
+    text-align: center;
+    min-width: 300px;
+
+}
+.container .electionSymbol{
+    margin: auto;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+.container .electionSymbol img{
+    
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    
+}
+.container .welcome, .container .candidate, .container .details {
+    padding: 10px 0;
+}
+.container .details h2{
+    line-height: 1.5em;
+}
+.container .details .row{
+    display: flex;
+    flex-direction: row;
+    text-align: start;
+    align-items: center;
+    padding: 5px 10px;
+}
+.container .details .row:nth-child(2n)
+{
+    background-color: #dddddd;
+}
+.container .details .row p:first-child{
+    width: 20%;
+} 
+.container .details .row p:last-child{
+    width: 80%;
+} 
+.container .options{
+    display: flex;
+    justify-content: space-evenly;
+}
+.container .options button{
+    width: 100px;
+    height: 32px;
+    border: 1px solid white;
+    border-radius: 12px;
+}
+.container .options button:hover{
+    font-size: medium;
+}
+
+@media only screen and (max-width : 991px)  {
+    .container{
+        width: 80%;
+    }
+    
+}
+
+@media only screen and (max-width : 661px)  {
+    .container{
+        width: 100%;
+    }
+    
+}
+@media only screen and (max-width : 521px)  {
+    .container{
+        width: 100%;
+    }
+    .container .details .row{
+        flex-direction: column;
+        text-align: center;
+        padding: 10px;
+        
+    }
+    .container .details .row p:first-child,.container .details .row p:last-child{
+        width: 90%;
+     }
+    .container .details .row p:first-child{
+        font-weight: bold;
+     }
+    
+}
